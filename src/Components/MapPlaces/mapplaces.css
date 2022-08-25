@@ -1,0 +1,119 @@
+.places-root {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@media only screen and (max-width: 700px) {
+  .places-root {
+    display: none;
+  }
+}
+.places-root .place-pin {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #59815b;
+  margin: 2% 0;
+  transition: transform 0.5s ease-in;
+}
+@media only screen and (max-width: 700px) {
+  .places-root .place-pin {
+    display: none;
+  }
+}
+.places-root .place-pin:hover {
+  transform: scale(0.7);
+}
+
+.places-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+  height: 100px;
+}
+@media only screen and (max-width: 700px) {
+  .places-content {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+.places-content .places-img-container {
+  height: inherit;
+  width: 100%;
+  transition: 0.5s;
+}
+@media only screen and (max-width: 700px) {
+  .places-content .places-img-container {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .places-content .places-img-container:hover {
+    transform: scale(1.08);
+  }
+}
+.places-content .places-img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  -webkit-clip-path: circle();
+          clip-path: circle();
+}
+@media only screen and (max-width: 700px) {
+  .places-content .places-img-container img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.places-content .places-details {
+  width: 50%;
+}
+@media only screen and (max-width: 700px) {
+  .places-content .places-details {
+    display: none;
+  }
+}
+.places-content .places-details h2 {
+  font-size: 1rem;
+}
+@media only screen and (max-width: 700px) {
+  .places-content .places-details h2 {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .places-content .places-details p {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .c-up:hover::before {
+    content: attr(title);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 600;
+    z-index: 999;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .c-down:hover::after {
+    content: attr(title);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 600;
+    z-index: 999;
+  }
+}/*# sourceMappingURL=mapplaces.css.map */

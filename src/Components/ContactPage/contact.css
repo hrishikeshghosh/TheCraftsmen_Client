@@ -1,0 +1,102 @@
+.contact-sect {
+  background-color: #2d2d2d;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 3% 0;
+}
+@media only screen and (max-width: 700px) {
+  .contact-sect {
+    flex-direction: column;
+  }
+}
+.contact-sect .contact-left,
+.contact-sect .contact-middle,
+.contact-sect .contact-right {
+  width: 33.33%;
+  padding: 2%;
+}
+@media only screen and (max-width: 700px) {
+  .contact-sect .contact-left,
+.contact-sect .contact-middle,
+.contact-sect .contact-right {
+    width: 100%;
+    padding: 5%;
+  }
+}
+.contact-sect .contact-left h1,
+.contact-sect .contact-middle h1,
+.contact-sect .contact-right h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1%;
+}
+.contact-sect .contact-left p,
+.contact-sect .contact-middle p,
+.contact-sect .contact-right p {
+  color: rgb(184, 184, 184);
+  margin-bottom: 2%;
+}
+.contact-sect .contact-left .signup-info,
+.contact-sect .contact-middle .signup-info,
+.contact-sect .contact-right .signup-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 2%;
+}
+.contact-sect .contact-left .signup-info input,
+.contact-sect .contact-middle .signup-info input,
+.contact-sect .contact-right .signup-info input {
+  padding: 2.5% 5%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.contact-sect .contact-left .signup-info button,
+.contact-sect .contact-middle .signup-info button,
+.contact-sect .contact-right .signup-info button {
+  padding: 2.5% 5%;
+  background-color: #59815b;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.contact-sect .contact-left .sm-icons,
+.contact-sect .contact-middle .sm-icons,
+.contact-sect .contact-right .sm-icons {
+  display: flex;
+  max-width: 80%;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: 5%;
+  gap: 10px;
+  color: whitesmoke;
+}
+.contact-sect .contact-left .sm-icons i,
+.contact-sect .contact-middle .sm-icons i,
+.contact-sect .contact-right .sm-icons i {
+  cursor: pointer;
+}
+.contact-sect .contact-left .redirectory-to-about,
+.contact-sect .contact-middle .redirectory-to-about,
+.contact-sect .contact-right .redirectory-to-about {
+  color: #59815b;
+  font-weight: 600;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.contact-sect .contact-left .redirectory-to-about:hover,
+.contact-sect .contact-middle .redirectory-to-about:hover,
+.contact-sect .contact-right .redirectory-to-about:hover {
+  -webkit-text-decoration: 1px solid underline #59815b;
+          text-decoration: 1px solid underline #59815b;
+}
+
+.footer {
+  background-color: black;
+  padding: 1%;
+  text-align: center;
+  color: white;
+  font-family: "Square Peg", cursive;
+}/*# sourceMappingURL=contact.css.map */

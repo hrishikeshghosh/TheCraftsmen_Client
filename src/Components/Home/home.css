@@ -1,0 +1,486 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Square+Peg&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+.home-root {
+  background-color: white;
+}
+@media only screen and (max-width: 700px) {
+  .home-root {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+.front-banner {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  background-image: url(https://res.cloudinary.com/dwtjde0mg/image/upload/v1660720375/h5-bckg-img-02_vnvgs8.jpg);
+  background-size: cover;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.front-banner .banner-static {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.front-banner .polaroid-1 {
+  width: 300px;
+  height: 200px;
+  padding: 1%;
+  background-color: white;
+  transform: rotate(-20deg);
+  position: absolute;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  top: -5%;
+  left: -2%;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.front-banner .polaroid-1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.5s ease-in;
+}
+.front-banner .polaroid-1 img:hover {
+  transform: scale(1.05);
+}
+@media only screen and (max-width: 700px) {
+  .front-banner .polaroid-1 {
+    top: -30%;
+  }
+}
+.front-banner .polaroid-2 {
+  height: 200px;
+  width: 150px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  overflow: hidden;
+}
+.front-banner .polaroid-2 img {
+  width: 100%;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: 0.5s ease-in;
+}
+.front-banner .polaroid-2 img:hover {
+  transform: scale(1.1);
+}
+.front-banner .polaroid-2 .banner-img-details {
+  height: 80px;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.front-banner .polaroid-2 .banner-img-details .bi-title {
+  font-family: "Square Peg", cursive;
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.front-banner .polaroid-2 .banner-img-details .bi-line {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+@media only screen and (max-width: 700px) {
+  .front-banner .polaroid-2 {
+    left: -15%;
+  }
+}
+.front-banner .polaroid-3 {
+  width: 300px;
+  height: 200px;
+  padding: 1%;
+  background-color: white;
+  transform: rotate(5deg);
+  position: absolute;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  top: -10%;
+  left: 40%;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.front-banner .polaroid-3 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.5s ease-in;
+}
+.front-banner .polaroid-3 img:hover {
+  transform: scale(1.05);
+}
+@media only screen and (max-width: 700px) {
+  .front-banner .polaroid-3 {
+    top: -25%;
+  }
+}
+.front-banner .polaroid-4 {
+  height: 300px;
+  width: 150px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: absolute;
+  top: 0;
+  left: 80%;
+  overflow: hidden;
+}
+.front-banner .polaroid-4 img {
+  width: 100%;
+  height: 230px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: 0.5s ease-in;
+}
+.front-banner .polaroid-4 img:hover {
+  transform: scale(1.1);
+}
+.front-banner .polaroid-4 .banner-img-details {
+  height: 70px;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.front-banner .polaroid-4 .banner-img-details .bi-title {
+  font-family: "Square Peg", cursive;
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.front-banner .polaroid-4 .banner-img-details .bi-line {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+@media only screen and (max-width: 700px) {
+  .front-banner .polaroid-4 {
+    left: 85%;
+  }
+}
+.front-banner .polaroid-5 {
+  height: 300px;
+  width: 200px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: absolute;
+  top: 10%;
+  left: 90%;
+  overflow: hidden;
+}
+.front-banner .polaroid-5 img {
+  width: 100%;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: 0.5s ease-in;
+}
+.front-banner .polaroid-5 img:hover {
+  transform: scale(1.1);
+}
+.front-banner .polaroid-5 .banner-img-details {
+  height: 150px;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.front-banner .polaroid-5 .banner-img-details .bi-title {
+  font-family: "Square Peg", cursive;
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.front-banner .polaroid-5 .banner-img-details .bi-line {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+@media only screen and (max-width: 700px) {
+  .front-banner .polaroid-5 {
+    left: 90%;
+  }
+}
+.front-banner .polaroid-6 {
+  width: 300px;
+  height: 200px;
+  padding: 1%;
+  background-color: white;
+  transform: rotate(-5deg);
+  position: absolute;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  top: 60%;
+  left: 60%;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.front-banner .polaroid-6 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.5s ease-in;
+}
+.front-banner .polaroid-6 img:hover {
+  transform: scale(1.05);
+}
+@media only screen and (max-width: 700px) {
+  .front-banner .polaroid-6 {
+    left: 70%;
+    top: 80%;
+  }
+}
+.front-banner .polaroid-7 {
+  width: 300px;
+  height: 200px;
+  padding: 1%;
+  background-color: white;
+  transform: rotate(5deg);
+  position: absolute;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  top: 55%;
+  left: 2%;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.front-banner .polaroid-7 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.5s ease-in;
+}
+.front-banner .polaroid-7 img:hover {
+  transform: scale(1.05);
+}
+@media only screen and (max-width: 700px) {
+  .front-banner .polaroid-7 {
+    left: -10%;
+    top: 80%;
+  }
+}
+.front-banner .polaroid-8 {
+  height: 200px;
+  width: 150px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  overflow: hidden;
+}
+.front-banner .polaroid-8 img {
+  width: 100%;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transition: 0.5s ease-in;
+}
+.front-banner .polaroid-8 img:hover {
+  transform: scale(1.1);
+}
+.front-banner .polaroid-8 .banner-img-details {
+  height: 80px;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.front-banner .polaroid-8 .banner-img-details .bi-title {
+  font-family: "Square Peg", cursive;
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.front-banner .polaroid-8 .banner-img-details .bi-line {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+@media only screen and (max-width: 700px) {
+  .front-banner .polaroid-8 {
+    left: -15%;
+  }
+}
+
+.banner-titles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 700px) {
+  .banner-titles {
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 900;
+    border-radius: 8px;
+    padding: 2%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+}
+.banner-titles h1 {
+  font-size: 3rem;
+  font-family: "Cinzel", serif;
+}
+@media only screen and (max-width: 700px) {
+  .banner-titles h1 {
+    font-size: 2rem;
+    white-space: nowrap;
+  }
+}
+.banner-titles h1 span {
+  font-size: 2.5rem;
+  font-family: "Square Peg", cursive;
+  color: rgb(50, 50, 50);
+  color: #d61c4e;
+}
+@media only screen and (max-width: 700px) {
+  .banner-titles h1 span {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+}
+.banner-titles button {
+  width: 40%;
+  padding: 2% 0;
+  background-color: black;
+  color: white;
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.5px;
+}
+
+.explore-typecast {
+  position: relative;
+}
+.explore-typecast .type-cards {
+  background-image: url(https://res.cloudinary.com/dwtjde0mg/image/upload/v1660720997/h1-bckg-02_ostut8.jpg);
+  background-size: contain;
+}
+
+.section-title {
+  padding: 5%;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "Cinzel", serif;
+}
+.section-title span {
+  font-family: "Square Peg", cursive;
+  color: #d61c4e;
+  font-size: 3rem;
+}
+
+.map-area {
+  width: 100%;
+  height: 400px;
+  background-image: url(https://wanderland.qodeinteractive.com/wp-content/plugins/wanderland-core/assets/css/img/timeline.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.ecom-link {
+  padding: 5% 0;
+}
+.ecom-link h1 {
+  padding: 2%;
+  text-align: center;
+  font-size: 2.5rem;
+}
+.ecom-link .product-list {
+  width: 100%;
+  margin: 2% 0;
+  background-image: url(https://res.cloudinary.com/dwtjde0mg/image/upload/v1660720997/h1-bckg-02_ostut8.jpg);
+  background-size: contain;
+}
+.ecom-link button {
+  width: 50%;
+  padding: 1%;
+  display: block;
+  margin: 0 auto;
+  font-weight: 700;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  background: transparent;
+  text-transform: capitalize;
+  border: 1px solid black;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+@media only screen and (max-width: 700px) {
+  .ecom-link button {
+    width: 80%;
+    padding: 3% 0;
+    margin-top: 5%;
+  }
+}
+.ecom-link button:hover {
+  background-color: #000;
+  color: white;
+}
+
+.et-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0.5;
+}
+
+.et-bg1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0.1;
+}
+
+.main-loader {
+  display: fixed;
+  top: 0;
+  background-image: url(https://res.cloudinary.com/dwtjde0mg/image/upload/v1660720997/h1-bckg-02_ostut8.jpg);
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}/*# sourceMappingURL=home.css.map */

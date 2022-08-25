@@ -1,0 +1,52 @@
+.confrimation-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(black, 0.2);
+  z-index: 999;
+}
+
+.confirm-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 5%;
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  p {
+    span {
+      color: #277bc0;
+      text-decoration: 1px solid underline;
+      cursor: pointer;
+    }
+  }
+  button {
+    margin: 5% 0;
+    width: 20%;
+    padding: 2%;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    background-color: #1d976c;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+      background-color: #2dcd95;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.contact-sect {
+  background-color: #2d2d2d;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 3% 0;
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+  .contact-left,
+  .contact-middle,
+  .contact-right {
+    width: 33.33%;
+    padding: 2%;
+    @media only screen and (max-width: 700px) {
+      width: 100%;
+      padding: 5%;
+    }
+
+    h1 {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 1%;
+    }
+    p {
+      color: rgb(184, 184, 184);
+      margin-bottom: 2%;
+    }
+    .signup-info {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 2%;
+      input {
+        padding: 2.5% 5%;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+      }
+      button {
+        padding: 2.5% 5%;
+        background-color: #59815b;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+      }
+    }
+    .sm-icons {
+      display: flex;
+      max-width: 80%;
+      align-items: center;
+      font-size: 2rem;
+      margin-top: 5%;
+      gap: 10px;
+      color: whitesmoke;
+      i {
+        cursor: pointer;
+      }
+    }
+    .redirectory-to-about {
+      color: #59815b;
+      font-weight: 600;
+
+      transition: 0.5s;
+      cursor: pointer;
+      &:hover {
+        text-decoration: 1px solid underline #59815b;
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: black;
+  padding: 1%;
+  text-align: center;
+  color: white;
+  font-family: "Square Peg", cursive;
+}

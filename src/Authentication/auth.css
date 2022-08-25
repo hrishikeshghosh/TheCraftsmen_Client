@@ -1,0 +1,175 @@
+.auth-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.auth-box {
+  width: 70%;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  z-index: 999;
+}
+@media only screen and (max-width: 700px) {
+  .auth-box {
+    width: 100%;
+  }
+}
+.auth-box .ab-movable {
+  width: 40%;
+  background-color: #1d976c;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 999;
+}
+@media only screen and (max-width: 700px) {
+  .auth-box .ab-movable {
+    display: none;
+  }
+}
+.auth-box .ab-movable .abm-content-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+.auth-box .ab-movable .abm-content-box .abm-titlep {
+  font-size: 1.5rem;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+}
+.auth-box .ab-movable .abm-content-box .abm-titleh1 {
+  font-family: "Cinzel", serif;
+}
+.auth-box .ab-movable .abm-content-box button {
+  padding: 5%;
+  width: 60%;
+  margin: 2% 0;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-family: "Cinzel", serif;
+}
+.auth-box .ab-movable .abm-content-box button:hover {
+  background-color: rgb(226, 224, 224);
+}
+.auth-box .ab-movable .drought-img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom-left-radius: 8px;
+}
+.auth-box .ab-static {
+  width: 60%;
+  height: 100%;
+  padding: 5%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+@media only screen and (max-width: 700px) {
+  .auth-box .ab-static {
+    width: 100%;
+  }
+}
+.auth-box .ab-static .static-content-box {
+  height: 100%;
+  padding: 5% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.auth-box .ab-static .static-content-box h1 {
+  text-align: center;
+  padding: 5%;
+  width: 100%;
+  font-family: "Cinzel", serif;
+}
+.auth-box .ab-static .static-content-box .input-field {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3%;
+  background-color: #eee;
+  border-radius: 8px;
+}
+.auth-box .ab-static .static-content-box .input-field i {
+  color: rgb(188, 187, 187);
+  margin-left: 5%;
+}
+.auth-box .ab-static .static-content-box .input-field input {
+  padding: 4%;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.auth-box .ab-static .static-content-box .input-field input::-moz-placeholder {
+  font-family: "Roboto", serif;
+  font-weight: 600;
+}
+.auth-box .ab-static .static-content-box .input-field input:-ms-input-placeholder {
+  font-family: "Roboto", serif;
+  font-weight: 600;
+}
+.auth-box .ab-static .static-content-box .input-field input::placeholder {
+  font-family: "Roboto", serif;
+  font-weight: 600;
+}
+.auth-box .ab-static .static-content-box .fp-link {
+  font-family: "Roboto", serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.auth-box .ab-static .static-content-box .fp-link:hover {
+  -webkit-text-decoration: underline 0.5px solid;
+          text-decoration: underline 0.5px solid;
+}
+.auth-box .ab-static .static-content-box button {
+  width: 50%;
+  margin: 5% 0;
+  padding: 4%;
+  border-radius: 100px;
+  border: none;
+  outline: none;
+  background-color: #1d976c;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.5s;
+  font-family: "Cinzel", serif;
+  font-size: 1.2rem;
+}
+.auth-box .ab-static .static-content-box button:hover {
+  background-color: #20a878;
+}
+
+.mb-change {
+  color: #1d976c;
+}
+.mb-change:hover {
+  -webkit-text-decoration: 1px solid #1d976c;
+          text-decoration: 1px solid #1d976c;
+}/*# sourceMappingURL=auth.css.map */

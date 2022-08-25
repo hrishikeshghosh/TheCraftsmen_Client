@@ -1,0 +1,80 @@
+.guest-wrap {
+  display: inline-block;
+  position: relative;
+  margin-top: 5%;
+  width: 100%;
+}
+.guest-wrap .g-input-box {
+  display: flex;
+  align-items: center;
+  padding: 1% 5%;
+  gap: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.guest-wrap .g-input-box i {
+  color: #1d976c;
+}
+.guest-wrap .g-input-box input {
+  width: 100%;
+  padding: 5%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.g-selector {
+  background-color: white;
+  border: 1px solid #eee;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 2% 5%;
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40px;
+  border-radius: 8px;
+}
+.g-selector .operators {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.g-selector .operators p {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.g-selector .operators p span {
+  font-size: 0.8rem;
+  color: rgb(98, 98, 98);
+}
+.g-selector .operators div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2% 0;
+}
+.g-selector .operators div p {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.g-selector .operators div p span {
+  font-size: 0.7rem;
+}
+.g-selector .operators div button {
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid #eee;
+  color: rgb(83, 83, 83);
+  cursor: pointer;
+  border-radius: 8px;
+}
+.g-selector .operators div button:hover {
+  background-color: rgba(89, 129, 91, 0.5);
+  color: white;
+}/*# sourceMappingURL=guestpicker.css.map */

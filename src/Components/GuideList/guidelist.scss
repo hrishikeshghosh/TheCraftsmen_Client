@@ -1,0 +1,145 @@
+@import "../../stylevariables";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+.gd-appbar {
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1%;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  .tour-data-box {
+    width: 20%;
+    background-color: #1d976c;
+    padding: 1% 2%;
+    border-radius: 5px;
+    .td-title {
+      color: white;
+      font-weight: 700;
+    }
+    .td-data {
+      color: rgb(235, 235, 235);
+      text-transform: uppercase;
+    }
+  }
+}
+
+.gb-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  @media only screen and (max-width: 700px) {
+    display: block;
+  }
+  .gb-filters {
+    width: 25%;
+    padding: 2%;
+    position: sticky;
+    top: 0;
+    @media only screen and (max-width: 700px) {
+      width: 100%;
+      display: flex;
+      position: relative;
+      .filter-box {
+        display: none;
+      }
+    }
+    .filter-box {
+      margin-bottom: 5%;
+
+      h4 {
+        background: #1d976c;
+        font-family: "Roboto", serif;
+        font-size: 0.9rem;
+        padding: 5%;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+      }
+      .filter-contents {
+        margin: 2% 0;
+        padding: 2%;
+        .each-filter {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          p {
+            font-family: "Roboto", sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+          }
+          input {
+            height: 15px;
+            width: 15px;
+          }
+          padding: 2% 0;
+        }
+      }
+    }
+  }
+}
+
+.gb-list {
+  padding: 2%;
+  width: 75%;
+  @media only screen and (max-width: 700px) {
+    width: 100%;
+  }
+  h1 {
+    font-size: 3rem;
+    font-family: "Cinzel", serif;
+    span {
+      font-family: "Square Peg", cursive;
+      color: $color1;
+      @media only screen and (max-width: 700px) {
+        font-size: 1rem;
+      }
+    }
+    @media only screen and (max-width: 700px) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+}
+
+.mb-price-filter-box,
+.mb-rate-filter-box {
+  padding: 5% 3%;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  width: 50%;
+  gap: 10px;
+  display: flex;
+
+  i {
+    color: rgb(154, 153, 153);
+  }
+  input {
+    padding: 2%;
+    border: none;
+    outline: none;
+  }
+}
+
+.mb-filter-selector {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(black, 0.4);
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: fit-content;
+    background-color: white;
+    border-radius: 8px;
+    // display: flex;
+    // align-items: center;
+    padding: 2%;
+  }
+}

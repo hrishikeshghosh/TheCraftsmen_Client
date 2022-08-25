@@ -1,0 +1,99 @@
+.seller-selection-zone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+.seller-selection-zone .ssz-box {
+  width: 80%;
+  height: 80%;
+  background-color: whitesmoke;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3%;
+}
+.seller-selection-zone .ssz-box h2 {
+  padding: 2% 0;
+  text-align: center;
+  font-family: "Cinzel", serif;
+}
+.seller-selection-zone .ssz-box .ssz-content-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.seller-selection-zone .ssz-box .seller-select,
+.seller-selection-zone .ssz-box .guide-select,
+.seller-selection-zone .ssz-box .volunteer-select {
+  height: 70%;
+  width: 30%;
+  border-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
+  padding: 3%;
+}
+.seller-selection-zone .ssz-box .seller-select button,
+.seller-selection-zone .ssz-box .guide-select button,
+.seller-selection-zone .ssz-box .volunteer-select button {
+  width: 100%;
+  padding: 5%;
+  margin: 5% 0;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #1d976c;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+.seller-selection-zone .ssz-box .seller-select button:hover,
+.seller-selection-zone .ssz-box .guide-select button:hover,
+.seller-selection-zone .ssz-box .volunteer-select button:hover {
+  background-color: #36ba8c;
+}
+.seller-selection-zone .ssz-box .seller-select .ssr-headings,
+.seller-selection-zone .ssz-box .guide-select .ssr-headings,
+.seller-selection-zone .ssz-box .volunteer-select .ssr-headings {
+  display: flex;
+  padding: 2%;
+  gap: 10px;
+  align-items: center;
+}
+.seller-selection-zone .ssz-box .seller-select .ssr-headings h4,
+.seller-selection-zone .ssz-box .guide-select .ssr-headings h4,
+.seller-selection-zone .ssz-box .volunteer-select .ssr-headings h4 {
+  font-family: "Cinzel", serif;
+}
+.seller-selection-zone .ssz-box .seller-select .ssr-headings i,
+.seller-selection-zone .ssz-box .guide-select .ssr-headings i,
+.seller-selection-zone .ssz-box .volunteer-select .ssr-headings i {
+  color: #1d976c;
+  font-size: 1.5rem;
+}
+.seller-selection-zone .ssz-box .seller-select .selector-features,
+.seller-selection-zone .ssz-box .guide-select .selector-features,
+.seller-selection-zone .ssz-box .volunteer-select .selector-features {
+  margin-top: 5%;
+  word-wrap: break-word;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.seller-selection-zone .ssz-box .seller-select .selector-features i,
+.seller-selection-zone .ssz-box .guide-select .selector-features i,
+.seller-selection-zone .ssz-box .volunteer-select .selector-features i {
+  color: #1d976c;
+}
+.seller-selection-zone .ssz-box .seller-select .selector-features p,
+.seller-selection-zone .ssz-box .guide-select .selector-features p,
+.seller-selection-zone .ssz-box .volunteer-select .selector-features p {
+  font-size: 0.9rem;
+}/*# sourceMappingURL=sellerSelection.css.map */

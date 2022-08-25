@@ -1,0 +1,110 @@
+.appbar-root {
+  padding: 1%;
+  border-bottom: 1px solid #eee;
+  background-color: white;
+  z-index: 999;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.appbar-root .appbar-contents {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  position: relative;
+}
+.appbar-root .appbar-contents .logo-holder {
+  cursor: pointer;
+}
+.appbar-root .appbar-contents .logo-holder h3 {
+  font-family: "Cinzel", serif;
+}
+.appbar-root .appbar-contents .logo-holder h3 span {
+  font-family: "Square Peg", cursive;
+  font-size: 1rem;
+  color: #d61c4e;
+}
+.appbar-root .appbar-contents .appbar-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+}
+.appbar-root .appbar-contents .appbar-right p {
+  font-family: "Cinzel", serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.appbar-root .appbar-contents .appbar-menu {
+  padding: 1%;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  z-index: 1100;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 8px;
+  width: 250px;
+}
+.appbar-root .appbar-contents .appbar-menu p {
+  padding: 5% 10%;
+  margin-top: 5%;
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 8px;
+  color: black;
+}
+.appbar-root .appbar-contents .appbar-menu p:first-child {
+  margin-top: 0;
+}
+.appbar-root .appbar-contents .appbar-menu p:hover {
+  background-color: rgba(238, 238, 238, 0.7);
+}
+.appbar-root .appbar-contents .appbar-menu p span {
+  margin-right: 5%;
+  color: rgb(176, 176, 176);
+}
+.appbar-root .appbar-contents .appbar-menu .logout-btn {
+  border-top: 1px solid #eee;
+}
+
+.appr-divider {
+  width: 1px;
+  height: 10px;
+  background-color: grey;
+}
+
+.join-us-btn {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #1d976c;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.join-us-btn:hover {
+  -webkit-text-decoration: 1px solid underline;
+          text-decoration: 1px solid underline;
+}
+
+.authme-btn {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #ff7f3f;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.authme-btn:hover {
+  -webkit-text-decoration: 1px solid underline;
+          text-decoration: 1px solid underline;
+}
+
+.mobile-menu i {
+  color: #1d976c;
+}/*# sourceMappingURL=appbar.css.map */

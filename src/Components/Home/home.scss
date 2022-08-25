@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Square+Peg&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import "../../stylevariables";
+
+@mixin polaroid1($top, $left, $hgt, $wdt, $rot) {
+  width: $wdt;
+  height: $hgt;
+  padding: 1%;
+  background-color: white;
+  transform: rotate($rot);
+  position: absolute;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  top: $top;
+  left: $left;
+  overflow: hidden;
+  user-select: none;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease-in;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@mixin polaroid2($top, $left, $hgt, $wgt, $imgH, $dH) {
+  height: $hgt;
+  width: $wgt;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: absolute;
+  top: $top;
+  left: $left;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: $imgH;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s ease-in;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .banner-img-details {
+    height: $dH;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .bi-title {
+      font-family: "Square Peg", cursive;
+      font-weight: 800;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    .bi-line {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+}
+
+.home-root {
+  background-color: white;
+  @media only screen and (max-width: 700px) {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+.front-banner {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  background-image: url(https://res.cloudinary.com/dwtjde0mg/image/upload/v1660720375/h5-bckg-img-02_vnvgs8.jpg);
+  background-size: cover;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  .banner-static {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .polaroid-1 {
+    @include polaroid1(-5%, -2%, 200px, 300px, -20deg);
+    @media only screen and (max-width: 700px) {
+      top: -30%;
+    }
+  }
+  .polaroid-2 {
+    @include polaroid2(10%, 15%, 200px, 150px, 120px, 80px);
+    @media only screen and (max-width: 700px) {
+      left: -15%;
+    }
+  }
+  .polaroid-3 {
+    @include polaroid1(-10%, 40%, 200px, 300px, 5deg);
+    @media only screen and (max-width: 700px) {
+      top: -25%;
+    }
+  }
+  .polaroid-4 {
+    @include polaroid2(0, 80%, 300px, 150px, 230px, 70px);
+    @media only screen and (max-width: 700px) {
+      left: 85%;
+    }
+  }
+  .polaroid-5 {
+    @include polaroid2(10%, 90%, 300px, 200px, 150px, 150px);
+    @media only screen and (max-width: 700px) {
+      left: 90%;
+    }
+  }
+  .polaroid-6 {
+    @include polaroid1(60%, 60%, 200px, 300px, -5deg);
+    @media only screen and (max-width: 700px) {
+      left: 70%;
+      top: 80%;
+    }
+  }
+  .polaroid-7 {
+    @include polaroid1(55%, 2%, 200px, 300px, 5deg);
+    @media only screen and (max-width: 700px) {
+      left: -10%;
+      top: 80%;
+    }
+  }
+  .polaroid-8 {
+    @include polaroid2(50%, 20%, 200px, 150px, 120px, 80px);
+    @media only screen and (max-width: 700px) {
+      left: -15%;
+    }
+  }
+}
+
+.banner-titles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media only screen and (max-width: 700px) {
+    background-color: rgba(white, 0.7);
+    z-index: 900;
+    border-radius: 8px;
+    padding: 2%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-family: "Cinzel", serif;
+    @media only screen and (max-width: 700px) {
+      font-size: 2rem;
+      white-space: nowrap;
+    }
+    span {
+      font-size: 2.5rem;
+      font-family: "Square Peg", cursive;
+      color: rgb(50, 50, 50);
+      color: $color1;
+      @media only screen and (max-width: 700px) {
+        font-size: 1rem;
+        white-space: nowrap;
+      }
+    }
+  }
+  button {
+    width: 40%;
+    padding: 2% 0;
+    background-color: black;
+    color: white;
+    font-family: "Cinzel", serif;
+    letter-spacing: 0.5px;
+  }
+}
+.explore-typecast {
+  position: relative;
+  .type-cards {
+    background-image: url(https://res.cloudinary.com/dwtjde0mg/image/upload/v1660720997/h1-bckg-02_ostut8.jpg);
+    background-size: contain;
+  }
+}
+
+.section-title {
+  padding: 5%;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "Cinzel", serif;
+
+  span {
+    font-family: "Square Peg", cursive;
+    color: $color1;
+    font-size: 3rem;
+  }
+}
+
+.map-area {
+  width: 100%;
+  height: 400px;
+  background-image: url(https://wanderland.qodeinteractive.com/wp-content/plugins/wanderland-core/assets/css/img/timeline.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  // @media only screen and (max-width: 700px) {
+  //   background-image: url(https://res.cloudinary.com/dwtjde0mg/image/upload/v1661196077/png-transparent-india-map-3d-computer-graphics-india-map-3d-computer-graphics-world-vector-map-removebg-preview_cso2fm.png);
+  // }
+}
+
+.ecom-link {
+  padding: 5% 0;
+  h1 {
+    padding: 2%;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  .product-list {
+    width: 100%;
+    margin: 2% 0;
+    background-image: url(https://res.cloudinary.com/dwtjde0mg/image/upload/v1660720997/h1-bckg-02_ostut8.jpg);
+    background-size: contain;
+  }
+  button {
+    width: 50%;
+    padding: 1%;
+    display: block;
+    margin: 0 auto;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-size: 1rem;
+    background: transparent;
+    text-transform: capitalize;
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+    transition: 0.5s;
+    @media only screen and (max-width: 700px) {
+      width: 80%;
+      padding: 3% 0;
+      margin-top: 5%;
+    }
+    &:hover {
+      background-color: #000;
+      color: white;
+    }
+  }
+}
+.et-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+  opacity: 0.5;
+}
+.et-bg1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+  opacity: 0.1;
+}
+
+.main-loader {
+  display: fixed;
+  top: 0;
+  background-image: url(https://res.cloudinary.com/dwtjde0mg/image/upload/v1660720997/h1-bckg-02_ostut8.jpg);
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
