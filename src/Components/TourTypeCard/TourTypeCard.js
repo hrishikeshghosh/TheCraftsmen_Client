@@ -54,7 +54,7 @@ const TourTypeCard = ({ name, title, src, desc, align, handleClick }) => {
           <h1>{title}</h1>
           <p>{desc}</p>
 
-          <Button2 link={'/packages'} />
+          <Button2 handleClick={handleClick} />
         </div>
         <div className='tourcard-img-container'>
           <Container
