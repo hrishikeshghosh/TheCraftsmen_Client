@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./sellerSelection.scss";
-const SellerSelection = ({ setOpen, setOpenSellerReg }) => {
+const SellerSelection = ({ setOpen }) => {
+  const [openSellerReg, setOpenSellerReg] = useState(false);
   const ref = useRef(null);
   useEffect(() => {
     document.addEventListener("keydown", handleEscape, true);

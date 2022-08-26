@@ -3,25 +3,12 @@ import "./style.scss";
 import { ReactComponent as SearchLogo } from "../../assets/search.svg";
 import axios from "axios";
 import { ECOM_URL } from "../../../Constants";
-import { useRef } from "react";
-import { animated, useSpring } from "react-spring";
 import InfiniteScroll from "react-infinite-scroll-component";
-
-const calc = (x, y) => [
-  -(y - window.innerHeight / 2) / 100,
-  (x - window.innerWidth / 2) / 100,
-  1,
-];
-const trans = (x, y, s) =>
-  `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
 const EcomCollection = () => {
   const [itemData, setItemData] = useState([]);
   const [page, setPage] = useState(1);
-  const [props, set] = useSpring(() => ({
-    xys: [0, 0, 1],
-    config: { mass: 10, tension: 200, friction: 50 },
-  }));
+
   const getData = async () => {
     try {
       const res = await axios(ECOM_URL + "item/?per_page=9");
@@ -113,7 +100,7 @@ const SearchBar = () => {
         <div className="search-data">
           {data.map((ele) => {
             return (
-              <a href={"/ecom/collections/" + ele._source.itemId}>
+              <a href={"/ecom/search/" + ele._source.title}>
                 {ele._source.title}
               </a>
             );

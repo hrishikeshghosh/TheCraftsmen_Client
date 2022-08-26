@@ -19,7 +19,7 @@
       box-shadow: 0 0 10px lightgray;
       cursor: pointer;
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       flex-direction: column;
       transition: 0.3s linear;
       &:hover {
