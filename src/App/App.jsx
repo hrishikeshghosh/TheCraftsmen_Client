@@ -12,13 +12,14 @@ import EcomCollection from "../Ecom/Pages/Collections";
 import EcomHome from "../Ecom/Pages/Home";
 import ProductDisplay from "../Ecom/Pages/ProductDisplay/ProductDisplay";
 import OrderDetails from "../Ecom/Pages/OrderDetails/OrderDetails";
+import Studio from "../Studio/Studio";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Appbar />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/packages" element={<GuideList />} />
         <Route path="/view-tour/:id" element={<BookingShelf />} />
         <Route
@@ -32,13 +33,14 @@ const App = () => {
           <Route path="/profile/wishlist" element={<Profile />} />
         </Route>
         <Route path="/">
-          <Route index path="/" element={<EcomHome />} />
+          <Route index path="/ecom/home" element={<EcomHome />} />
           <Route path="/ecom/collections" element={<EcomCollection />} />
           <Route
             path="/ecom/collections/product/:id"
             element={<ProductDisplay />}
           />
           <Route path="/product-review" element={<OrderDetails />} />
+          <Route path="/explorer" element={<Studio />} />
         </Route>
       </Routes>
       <Contact />

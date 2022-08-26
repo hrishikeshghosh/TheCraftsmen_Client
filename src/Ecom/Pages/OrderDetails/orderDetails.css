@@ -1,0 +1,50 @@
+.od-root {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #eee;
+}
+.od-root .prod-checkout-box {
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5%;
+}
+.od-root .prod-checkout-box h1 {
+  font-family: "Cinzel", serif;
+}
+.od-root .prod-checkout-box .op-product-details {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+.od-root .prod-checkout-box .op-product-details .prod-img {
+  width: 150px;
+  height: 100px;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.od-root .prod-checkout-box .op-product-details .od-title {
+  width: 50%;
+  padding: 2%;
+  border-bottom: 1px solid #1d976c;
+  margin: 0 2%;
+}
+.od-root .prod-checkout-box .op-product-details .od-title span {
+  font-family: "Cinzel", serif;
+  margin: 0 5%;
+  font-size: 1rem;
+}
+.od-root .prod-checkout-box .op-product-details .od-static-img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 300px;
+}/*# sourceMappingURL=orderDetails.css.map */
