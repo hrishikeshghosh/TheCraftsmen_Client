@@ -7,19 +7,6 @@ const SellerReg = ({ setOpen }) => {
   const [state, setState] = useState(states[0].name);
   const [avatar, setAvatar] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [isHindi, setIsHindi] = useState(false);
-  const [lang, setLang] = useState({
-    heading: "Craftsman Registration Form",
-    fn: "First Name",
-    ln: "Last Name",
-    email: "Email",
-    phone: "Phone Number",
-    address: "Your Address",
-    state: "Your State",
-    special: "Your Specialization",
-    pan: "Your Pan",
-    adhar: "Your Aadhar",
-  });
 
   const ref = useRef(null);
   useEffect(() => {
@@ -47,31 +34,15 @@ const SellerReg = ({ setOpen }) => {
     });
   };
 
-  const translate = async (txt) => {
-    const body = {
-      q: txt,
-      source: "en",
-      target: "hi",
-      format: "text",
-      api_key: "",
-    };
-    return await axios.post("https://libretranslate.de/translate", body);
-  };
-
   return (
     <div className="seller-reg-root">
       <div className="seller-reg-box" ref={ref}>
-        <button
-          className="translator-btn"
-          onClick={async () => {
-            setIsHindi((pv) => !pv);
-          }}
-        >
-          {isHindi ? "हिंदी में अनुवाद" : "Translate in English"}
-        </button>
         <h1>Craftsman Registration Form</h1>
         <label htmlFor="uplaod-seller-image">
-          <Avatar sx={{ height: "100px", width: "100px", margin: "3% auto" }} />
+          <Avatar
+            sx={{ height: "100px", width: "100px", margin: "3% auto" }}
+            src={avatar !== null && URL.createObjectURL(avatar)}
+          />
         </label>
         <input
           id="uplaod-seller-image"
@@ -79,7 +50,7 @@ const SellerReg = ({ setOpen }) => {
           accept="image/*"
           onChange={async (e) => {
             const { data } = await uploadImage(e.target.files[0]);
-            console.log(data);
+            setAvatar(e.target.files[0]);
           }}
           style={{ display: "none" }}
         />

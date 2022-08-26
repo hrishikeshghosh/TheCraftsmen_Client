@@ -64,7 +64,7 @@ const Auth = ({ setAuthOpen }) => {
             </h1>
             {!login && (
               <div className="input-field">
-                <i class="fas fa-user"></i>
+                <i className="fas fa-user"></i>
                 <input
                   placeholder="Name"
                   value={data.name}
@@ -74,7 +74,7 @@ const Auth = ({ setAuthOpen }) => {
             )}
 
             <div className="input-field">
-              <i class="fas fa-envelope"></i>
+              <i className="fas fa-envelope"></i>
               <input
                 placeholder="Email"
                 value={data.email}
@@ -82,7 +82,7 @@ const Auth = ({ setAuthOpen }) => {
               />
             </div>
             <div className="input-field">
-              <i class="fas fa-lock"></i>
+              <i className="fas fa-lock"></i>
               <input
                 placeholder="Password"
                 value={data.password}
@@ -91,7 +91,7 @@ const Auth = ({ setAuthOpen }) => {
             </div>
             {!login && (
               <div className="input-field">
-                <i class="fas fa-check-double"></i>
+                <i className="fas fa-check-double"></i>
                 <input
                   placeholder="Confirm Password"
                   value={data.passwordConfirm}

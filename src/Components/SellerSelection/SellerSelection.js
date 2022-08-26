@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./sellerSelection.scss";
-const SellerSelection = ({ setOpen }) => {
-  const [openSellerReg, setOpenSellerReg] = useState(false);
+const SellerSelection = ({ setOpen, setOpenSellerReg }) => {
   const ref = useRef(null);
   useEffect(() => {
     document.addEventListener("keydown", handleEscape, true);
@@ -23,19 +22,19 @@ const SellerSelection = ({ setOpen }) => {
         <div className="ssz-content-box">
           <div className="seller-select">
             <div className="ssr-headings">
-              <i class="fas fa-store"></i>
+              <i className="fas fa-store"></i>
               <h4>Become a Craftsmen Seller</h4>
             </div>
             <div className="selector-features">
-              <i class="fas fa-check-double"></i>
+              <i className="fas fa-check-double"></i>
               <p>Make Your Business online.</p>
             </div>
             <div className="selector-features">
-              <i class="fas fa-check-double"></i>
+              <i className="fas fa-check-double"></i>
               <p>Engage yourself with a larger audience set</p>
             </div>
             <div className="selector-features">
-              <i class="fas fa-check-double"></i>
+              <i className="fas fa-check-double"></i>
               <p>
                 Free volunteer support and Hustle free product transportation
               </p>
@@ -45,22 +44,28 @@ const SellerSelection = ({ setOpen }) => {
 
           <div className="volunteer-select">
             <div className="ssr-headings">
-              <i class="fas fa-hands-helping"></i>
+              <i className="fas fa-hands-helping"></i>
               <h4>Become a Volunteer</h4>
             </div>
             <div className="selector-features">
-              <i class="fas fa-check-double"></i>
+              <i className="fas fa-check-double"></i>
               <p>Be the connection between artisans and the audience</p>
             </div>
             <div className="selector-features">
-              <i class="fas fa-check-double"></i>
+              <i className="fas fa-check-double"></i>
               <p>Help grow culture and heritage </p>
             </div>
             <div className="selector-features">
-              <i class="fas fa-check-double"></i>
+              <i className="fas fa-check-double"></i>
               <p>Make Your own tourism company with us</p>
             </div>
-            <button>Join us!</button>
+            <button
+              onClick={() => {
+                setOpenSellerReg(true);
+              }}
+            >
+              Join us!
+            </button>
           </div>
         </div>
       </div>

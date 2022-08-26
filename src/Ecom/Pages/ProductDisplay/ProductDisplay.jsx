@@ -1,13 +1,16 @@
 /* eslint-disable no-unused-vars */
-import { Avatar, LinearProgress, Rating } from '@mui/material';
-import React, { useEffect, useRef, useState } from 'react';
-import { ReactComponent as SearchLogo } from '../../assets/search.svg';
-import Confirmation from '../../../Components/Confirmation/Confirmation';
-import './productdisplay.scss';
+import { Avatar, LinearProgress, Rating } from "@mui/material";
+import React, { useEffect, useRef, useState } from "react";
+import { ReactComponent as SearchLogo } from "../../assets/search.svg";
+import Confirmation from "../../../Components/Confirmation/Confirmation";
+import "./productdisplay.scss";
+import axios from "axios";
+import { ECOM_URL } from "../../../Constants";
+import { useParams } from "react-router-dom";
 const SearchBar = () => {
   return (
-    <div className='search-bar-wrapper'>
-      <input placeholder='Search your desire products...' />
+    <div className="search-bar-wrapper">
+      <input placeholder="Search your desire products..." />
       <SearchLogo />
     </div>
   );
@@ -15,7 +18,7 @@ const SearchBar = () => {
 
 const loadScript = (src) => {
   return new Promise((resolve) => {
-    const script = document.createElement('script');
+    const script = document.createElement("script");
     script.src = src;
 
     script.onload = () => {
@@ -29,31 +32,47 @@ const loadScript = (src) => {
 };
 
 const ProductDisplay = () => {
+  const [productDetails, setProductDetails] = useState({});
+  const { id } = useParams();
+
+  // const getData = async () => {
+  //   try {
+  //     const res = await axios.get(ECOM_URL + `id/${id}`);
+  //     console.log(res);
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
   const [openSizeChart, setOpenSizechart] = useState(false);
-  const [size, setSize] = useState('S');
+  const [size, setSize] = useState("S");
   const [quant, setQuant] = useState(1);
   const [price, setPrice] = useState(2200);
 
   const [openConfirm, setOpenConfirm] = useState(false);
-  const [orderID, setOrderID] = useState('123');
+  const [orderID, setOrderID] = useState("123");
   const displayRazorPay = async () => {
     const res = await loadScript(
-      'https://checkout.razorpay.com/v1/checkout.js',
+      "https://checkout.razorpay.com/v1/checkout.js"
     );
 
     if (!res) {
       alert(
-        'We are having a problem to load your Payment, Are you still online?',
+        "We are having a problem to load your Payment, Are you still online?"
       );
       return;
     }
 
     var options = {
-      key: 'rzp_test_DvgVg00QNj1lSy', // Enter the Key ID generated from the Dashboard
-      amount: '500000',
-      currency: 'INR',
-      name: 'North India Tour',
-      description: 'Complete your payment for the tour',
+      key: "rzp_test_DvgVg00QNj1lSy", // Enter the Key ID generated from the Dashboard
+      amount: "500000",
+      currency: "INR",
+      name: "North India Tour",
+      description: "Complete your payment for the tour",
       // order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
       handler: function (response) {
         // alert(response.razorpay_payment_id);
@@ -62,7 +81,7 @@ const ProductDisplay = () => {
         setOrderID(response.razorpay_order_id);
       },
       theme: {
-        color: '#3399cc',
+        color: "#3399cc",
       },
     };
     var payment = new window.Razorpay(options);
@@ -71,12 +90,12 @@ const ProductDisplay = () => {
 
   const ref = useRef(null);
   useEffect(() => {
-    document.addEventListener('keydown', handleEscape, true);
-    document.addEventListener('click', handleclickOut, true);
+    document.addEventListener("keydown", handleEscape, true);
+    document.addEventListener("click", handleclickOut, true);
   }, []);
 
   const handleEscape = (e) => {
-    if (e.key === 'Escape') setOpenSizechart(false);
+    if (e.key === "Escape") setOpenSizechart(false);
   };
   const handleclickOut = (e) => {
     if (ref.current && !ref.current.contains(e.target)) setOpenSizechart(false);
@@ -93,53 +112,53 @@ const ProductDisplay = () => {
   }, [quant]);
 
   return (
-    <div className='product-display-root'>
+    <div className="product-display-root">
       {openConfirm && (
         <Confirmation setOpen={setOpenConfirm} orderID={orderID} />
       )}
-      <section className='pd-appbar-zone'>
+      <section className="pd-appbar-zone">
         <SearchBar />
       </section>
-      <section className='product-title-img-page'>
-        <div className='prod-title'>
-          <div className='prod-title-holder'>
+      <section className="product-title-img-page">
+        <div className="prod-title">
+          <div className="prod-title-holder">
             <h1>Embroidery Pashmina Shawl</h1>
             <p>#Best Seller</p>
           </div>
-          <div className='prod-ses'>
-            <div className='product-distributor'>
-              <Avatar sx={{ height: '30px', width: '30px' }} />
+          <div className="prod-ses">
+            <div className="product-distributor">
+              <Avatar sx={{ height: "30px", width: "30px" }} />
               <p>Hrishikesh</p>
             </div>
-            <div className='product-rating-1'>
-              <i className='fas fa-star'></i>
+            <div className="product-rating-1">
+              <i className="fas fa-star"></i>
               <p>4.3(44)</p>
             </div>
           </div>
         </div>
-        <div className='product-img-box'>
-          <div className='pib-left'>
+        <div className="product-img-box">
+          <div className="pib-left">
             <img
-              src='https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHBvdGVyeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60'
-              alt=''
+              src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHBvdGVyeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+              alt=""
             />
           </div>
-          <div className='pib-right'>
+          <div className="pib-right">
             <img
-              src='https://images.unsplash.com/photo-1510922694088-df7b5254cdcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG90ZXJ5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60'
-              alt=''
+              src="https://images.unsplash.com/photo-1510922694088-df7b5254cdcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG90ZXJ5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
+              alt=""
             />
             <img
-              src='https://images.unsplash.com/photo-1637338375581-6a8a7b065aa9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBvdGVyeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60'
-              alt=''
+              src="https://images.unsplash.com/photo-1637338375581-6a8a7b065aa9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBvdGVyeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+              alt=""
             />
           </div>
           <div></div>
         </div>
       </section>
-      <section className='prod-details'>
-        <div className='prod-det-left'>
-          <div className='prod-overview'>
+      <section className="prod-details">
+        <div className="prod-det-left">
+          <div className="prod-overview">
             <h4>Overview</h4>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -163,89 +182,89 @@ const ProductDisplay = () => {
               accident, sometimes on purpose (injected humour and the like).
             </p>
           </div>
-          <div className='prod-rate-rev'>
+          <div className="prod-rate-rev">
             <h4>Ratings and Reviews</h4>
-            <div className='prr-content-box'>
-              <div className='prr-left'>
+            <div className="prr-content-box">
+              <div className="prr-left">
                 <h1>4.9</h1>
                 <Rating
                   value={3.5}
                   precision={0.5}
                   readOnly
-                  sx={{ color: '#1d976c' }}
+                  sx={{ color: "#1d976c" }}
                 />
                 <p>25 ratings</p>
               </div>
-              <div className='prr-right'>
-                <div className='star-progress sp-5'>
-                  <i className='fas fa-star'></i>
+              <div className="prr-right">
+                <div className="star-progress sp-5">
+                  <i className="fas fa-star"></i>
                   <LinearProgress
-                    variant='determinate'
+                    variant="determinate"
                     value={70}
                     sx={{
-                      width: '200px',
-                      backgroundColor: '#C4DFAA',
-                      '& .MuiLinearProgress-bar': {
+                      width: "200px",
+                      backgroundColor: "#C4DFAA",
+                      "& .MuiLinearProgress-bar": {
                         backgroundColor: `#2b7a0b`,
                       },
                     }}
                   />
                   <p>5</p>
                 </div>
-                <div className='star-progress sp-4'>
-                  <i className='fas fa-star'></i>
+                <div className="star-progress sp-4">
+                  <i className="fas fa-star"></i>
                   <LinearProgress
-                    variant='determinate'
+                    variant="determinate"
                     value={70}
                     sx={{
-                      width: '200px',
-                      backgroundColor: '#C4DFAA',
-                      '& .MuiLinearProgress-bar': {
+                      width: "200px",
+                      backgroundColor: "#C4DFAA",
+                      "& .MuiLinearProgress-bar": {
                         backgroundColor: `#2b7a0b`,
                       },
                     }}
                   />
                   <p>4</p>
                 </div>
-                <div className='star-progress sp-3'>
-                  <i className='fas fa-star'></i>
+                <div className="star-progress sp-3">
+                  <i className="fas fa-star"></i>
                   <LinearProgress
-                    variant='determinate'
+                    variant="determinate"
                     value={70}
                     sx={{
-                      width: '200px',
-                      backgroundColor: '#C4DFAA',
-                      '& .MuiLinearProgress-bar': {
+                      width: "200px",
+                      backgroundColor: "#C4DFAA",
+                      "& .MuiLinearProgress-bar": {
                         backgroundColor: `#2b7a0b`,
                       },
                     }}
                   />
                   <p>3</p>
                 </div>
-                <div className='star-progress sp-2'>
-                  <i className='fas fa-star'></i>
+                <div className="star-progress sp-2">
+                  <i className="fas fa-star"></i>
                   <LinearProgress
-                    variant='determinate'
+                    variant="determinate"
                     value={70}
                     sx={{
-                      width: '200px',
-                      backgroundColor: '#C4DFAA',
-                      '& .MuiLinearProgress-bar': {
+                      width: "200px",
+                      backgroundColor: "#C4DFAA",
+                      "& .MuiLinearProgress-bar": {
                         backgroundColor: `#2b7a0b`,
                       },
                     }}
                   />
                   <p>2</p>
                 </div>
-                <div className='star-progress sp-1'>
-                  <i className='fas fa-star'></i>
+                <div className="star-progress sp-1">
+                  <i className="fas fa-star"></i>
                   <LinearProgress
-                    variant='determinate'
+                    variant="determinate"
                     value={70}
                     sx={{
-                      width: '200px',
-                      backgroundColor: '#C4DFAA',
-                      '& .MuiLinearProgress-bar': {
+                      width: "200px",
+                      backgroundColor: "#C4DFAA",
+                      "& .MuiLinearProgress-bar": {
                         backgroundColor: `#2b7a0b`,
                       },
                     }}
@@ -256,63 +275,68 @@ const ProductDisplay = () => {
             </div>
           </div>
         </div>
-        <div className='prod-det-right'>
-          <div className='prod-price-box'>
-            <div className='size-zone'>
+        <div className="prod-det-right">
+          <div className="prod-price-box">
+            <div className="size-zone">
               <h3>Select Size</h3>
-              <div className='prod-size-btns'>
+              <div className="prod-size-btns">
                 <p
                   onClick={() => {
                     setOpenSizechart((pv) => !pv);
-                  }}>
+                  }}
+                >
                   {size}
                 </p>
                 <i
-                  className='fas fa-angle-down'
+                  className="fas fa-angle-down"
                   onClick={() => {
                     setOpenSizechart((pv) => !pv);
-                  }}></i>
+                  }}
+                ></i>
                 {openSizeChart && (
-                  <div className='size-options' ref={ref}>
-                    <p onClick={(e) => handleSetSize(e, 'XS')}>XS</p>
-                    <p onClick={(e) => handleSetSize(e, 'S')}>S</p>
-                    <p onClick={(e) => handleSetSize(e, 'M')}>M</p>
-                    <p onClick={(e) => handleSetSize(e, 'L')}>L</p>
-                    <p onClick={(e) => handleSetSize(e, 'XL')}>XL</p>
-                    <p onClick={(e) => handleSetSize(e, 'XXL')}>XXL</p>
-                    <p onClick={(e) => handleSetSize(e, 'XXXL')}>XXXL</p>
+                  <div className="size-options" ref={ref}>
+                    <p onClick={(e) => handleSetSize(e, "XS")}>XS</p>
+                    <p onClick={(e) => handleSetSize(e, "S")}>S</p>
+                    <p onClick={(e) => handleSetSize(e, "M")}>M</p>
+                    <p onClick={(e) => handleSetSize(e, "L")}>L</p>
+                    <p onClick={(e) => handleSetSize(e, "XL")}>XL</p>
+                    <p onClick={(e) => handleSetSize(e, "XXL")}>XXL</p>
+                    <p onClick={(e) => handleSetSize(e, "XXXL")}>XXXL</p>
                   </div>
                 )}
               </div>
             </div>
-            <div className='size-chart-shower'>
+            <div className="size-chart-shower">
               <p>See the size chart</p>
-              <i className='fas fa-expand-alt'></i>
+              <i className="fas fa-expand-alt"></i>
             </div>
-            <div className='price-seg-box'>
-              <p className='price-text'>&#8377; {price * quant}</p>
-              <div className='quantity-box'>
+            <div className="price-seg-box">
+              <p className="price-text">&#8377; {price * quant}</p>
+              <div className="quantity-box">
                 <button
-                  className='quant-increm'
-                  onClick={() => setQuant((pv) => pv + 1)}>
-                  <i className='fas fa-plus'></i>
+                  className="quant-increm"
+                  onClick={() => setQuant((pv) => pv + 1)}
+                >
+                  <i className="fas fa-plus"></i>
                 </button>
-                <p className='quant-text'>{quant}</p>
+                <p className="quant-text">{quant}</p>
                 <button
-                  className='quant-decream'
-                  onClick={() => setQuant((pv) => pv - 1)}>
-                  <i className='fas fa-minus'></i>
+                  className="quant-decream"
+                  onClick={() => setQuant((pv) => pv - 1)}
+                >
+                  <i className="fas fa-minus"></i>
                 </button>
               </div>
             </div>
-            <p className='rm-link'>Buy me Raw materials</p>
+            <p className="rm-link">Buy me Raw materials</p>
             <button
-              className='product-buy-btn'
+              className="product-buy-btn"
               onClick={() => {
                 displayRazorPay();
 
                 // window.location.href = "/product-review";
-              }}>
+              }}
+            >
               Buy now
             </button>
           </div>
