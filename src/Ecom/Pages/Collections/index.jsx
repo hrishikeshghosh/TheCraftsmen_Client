@@ -98,7 +98,7 @@ const SearchBar = () => {
         <div className='search-data'>
           {data.map((ele) => {
             return (
-              <a href={'/ecom/collections/' + ele._source.itemId}>
+              <a href={'/ecom/search/' + ele._source.title}>
                 {ele._source.title}
               </a>
             );
