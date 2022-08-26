@@ -1,0 +1,36 @@
+.virtual-tour-wrapper h2 {
+  text-align: center;
+  margin: 5vh;
+  font-size: 30px;
+}
+.virtual-tour-wrapper .virtual-tour-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80%;
+  margin: 5vh auto;
+}
+.virtual-tour-wrapper .virtual-tour-container .virtual-card {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px lightgray;
+  cursor: pointer;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  transition: 0.3s linear;
+}
+.virtual-tour-wrapper .virtual-tour-container .virtual-card:hover {
+  transform: scale(1.05);
+}
+.virtual-tour-wrapper .virtual-tour-container .virtual-details {
+  padding: 10px;
+  color: white;
+  background: linear-gradient(180deg, transparent, black);
+}
+.virtual-tour-wrapper .virtual-tour-container .virtual-details #title {
+  font-size: 26px;
+}/*# sourceMappingURL=style.css.map */

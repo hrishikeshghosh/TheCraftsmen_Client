@@ -237,4 +237,18 @@
   color: white;
   font-weight: 700;
   cursor: pointer;
+}
+
+.rm-link {
+  padding: 3%;
+  color: #1d976c;
+  cursor: pointer;
+  background-color: #eee;
+  margin-bottom: 5%;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+.rm-link:hover {
+  -webkit-text-decoration: 1px solid underline;
+          text-decoration: 1px solid underline;
 }/*# sourceMappingURL=productdisplay.css.map */

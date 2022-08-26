@@ -110,3 +110,26 @@
     color: #1d976c;
   }
 }
+
+.appbar-righty {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 30%;
+
+  .explorer-href {
+    font-size: 0.9rem;
+    padding: 2% 5%;
+    border-radius: 8px;
+    color: black;
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    text-shadow: 0.1em 0.1em 0 #eee;
+    font-style: italic;
+    cursor: pointer;
+    &:hover {
+      text-decoration: 1px solid #eee;
+    }
+  }
+}

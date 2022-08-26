@@ -1,0 +1,125 @@
+.seller-reg-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(black, 0.4);
+  z-index: 999;
+}
+.seller-reg-box {
+  width: 80%;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: auto;
+  h1 {
+    padding: 2%;
+    background-color: #eee;
+    border-radius: 8px;
+    text-align: center;
+    font-family: "Cinzel", serif;
+  }
+}
+.name-box,
+.govt-box {
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .first-name-box,
+  .last-name-box,
+  .aadhar-box,
+  .pan-box {
+    width: 50%;
+    p {
+      font-family: "Roboto", serif;
+      font-weight: 700;
+      word-wrap: nowrap;
+    }
+    input {
+      width: 50%;
+      padding: 5%;
+      border-radius: 8px;
+      border: 1px solid rgb(208, 208, 208);
+      outline: none;
+      margin: 1% 0;
+      width: 100%;
+    }
+  }
+}
+.bus-box,
+.email-box,
+.special-box {
+  width: 100%;
+  padding: 2%;
+  p {
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    word-wrap: nowrap;
+    text-transform: capitalize;
+  }
+  input {
+    width: 50%;
+    padding: 2%;
+    border-radius: 8px;
+    border: 1px solid rgb(208, 208, 208);
+    outline: none;
+    margin: 1% 0;
+    width: 100%;
+  }
+}
+.all-address-box {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  .address-box {
+    padding: 2%;
+    width: 50%;
+    p {
+      font-family: "Roboto", serif;
+      font-weight: 700;
+      word-wrap: nowrap;
+      text-transform: capitalize;
+    }
+    input {
+      width: 100%;
+      padding: 5%;
+      border-radius: 8px;
+      border: 1px solid rgb(208, 208, 208);
+      outline: none;
+      margin: 1% 0;
+      width: 100%;
+    }
+  }
+}
+.translator-btn {
+  padding: 1% 2%;
+  margin-bottom: 2%;
+  text-align: right;
+  border: none;
+  outline: none;
+  background-color: #1d976c;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.seller-submit-btn {
+  width: 70%;
+  padding: 2%;
+  background-color: #1d976c;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 auto;
+  margin: 2% auto;
+}

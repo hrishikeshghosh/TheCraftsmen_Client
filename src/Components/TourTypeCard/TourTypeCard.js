@@ -1,8 +1,8 @@
-import React from 'react';
-import './tourtypecard.css';
-import Button2 from '../AnimatedButtons/Button_2';
-import { animated, useSpring } from 'react-spring';
-import styled from '@emotion/styled';
+import React from "react";
+import "./tourtypecard.css";
+import Button2 from "../AnimatedButtons/Button_2";
+import { animated, useSpring } from "react-spring";
+import styled from "@emotion/styled";
 
 const calc = (x, y) => [
   -(y - window.innerHeight / 2) / 100,
@@ -26,20 +26,21 @@ const TourTypeCard = ({ name, title, src, desc, align, handleClick }) => {
   // const navigate = useNavigate();
   if (align === 0) {
     return (
-      <div className='tourcard-root'>
-        <div className='tourcard-img-container'>
+      <div className="tourcard-root">
+        <div className="tourcard-img-container">
           <Container
             src={src}
-            alt={'card-img'}
-            className='tourcard-img-container'
+            alt={"card-img"}
+            className="tourcard-img-container"
             onMouseMove={({ clientX: x, clientY: y }) => {
               set({ xys: calc(x, y) });
             }}
             onMouseLeave={() => set({ xys: [0, 0, 1] })}
-            style={{ transform: props.xys.interpolate(trans) }}></Container>
+            style={{ transform: props.xys.interpolate(trans) }}
+          ></Container>
         </div>
 
-        <div className='tour-card-details'>
+        <div className="tour-card-details">
           <h1>{title}</h1>
           <p>{desc}</p>
 
@@ -49,23 +50,24 @@ const TourTypeCard = ({ name, title, src, desc, align, handleClick }) => {
     );
   } else {
     return (
-      <div className='tourcard-root'>
-        <div className='tour-card-details'>
+      <div className="tourcard-root">
+        <div className="tour-card-details">
           <h1>{title}</h1>
           <p>{desc}</p>
 
           <Button2 handleClick={handleClick} />
         </div>
-        <div className='tourcard-img-container'>
+        <div className="tourcard-img-container">
           <Container
             src={src}
-            alt={'card-img'}
-            className='tourcard-img-container'
+            alt={"card-img"}
+            className="tourcard-img-container"
             onMouseMove={({ clientX: x, clientY: y }) => {
               set({ xys: calc(x, y) });
             }}
             onMouseLeave={() => set({ xys: [0, 0, 1] })}
-            style={{ transform: props.xys.interpolate(trans) }}></Container>
+            style={{ transform: props.xys.interpolate(trans) }}
+          ></Container>
         </div>
       </div>
     );

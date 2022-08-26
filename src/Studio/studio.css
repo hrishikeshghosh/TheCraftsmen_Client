@@ -15,6 +15,10 @@
   border-radius: 8px;
   padding: 3%;
 }
+.studio-box h1 {
+  text-align: center;
+  font-family: "Cinzel", serif;
+}
 
 .sp-root,
 .sv-root {
@@ -85,4 +89,9 @@
   background-color: white;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+}
+
+.spotlight-box h1 {
+  font-family: "Cinzel", serif;
+  padding: 2%;
 }/*# sourceMappingURL=studio.css.map */

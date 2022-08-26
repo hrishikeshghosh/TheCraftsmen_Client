@@ -7,11 +7,13 @@ import "./appbar.css";
 import { GetCurrentUser } from "../../Actions/User_Actions";
 import { UNAUTHENTICATE } from "../../Constants";
 import SellerSelection from "../SellerSelection/SellerSelection";
+import SellerReg from "../SellerRegistration/SellerReg";
 const Appbar = () => {
   const [open, setOpen] = useState(false);
   const [openAuth, setOpenAuth] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const [mobileDisplay, setMobileDisplay] = useState(false);
+  const [sellerReg, openSellerReg] = useState(false);
   const [ssOpen, setSsOpen] = useState(false);
   const { authStat, userData } = useSelector((state) => state.users);
   const dispatch = useDispatch();
@@ -52,30 +54,38 @@ const Appbar = () => {
         >
           <h3>The Craftsmen</h3>
         </div>
-        {mobileDisplay ? (
-          <IconButton
-            className="mobile-menu"
-            onClick={() => setOpen((pv) => !pv)}
+        <div className="appbar-righty">
+          <p
+            className="explorer-href"
+            onClick={() => (window.location.href = "/explorer")}
           >
-            <i className="fas fa-compass"></i>
-          </IconButton>
-        ) : authenticated ? (
-          <div className="appbar-right" onClick={() => setOpen((pv) => !pv)}>
-            <Avatar />
-            <p>{userData === null ? "Loading..." : userData?.name}</p>
-            <i className="fas fa-angle-down"></i>
-          </div>
-        ) : (
-          <div className="appbar-right">
-            <p className="authme-btn" onClick={() => setOpenAuth(true)}>
-              Login
-            </p>
-            <div className="appr-divider"></div>
-            <p className="join-us-btn" onClick={() => setSsOpen(true)}>
-              Join us.
-            </p>
-          </div>
-        )}
+            Explorer
+          </p>
+          {mobileDisplay ? (
+            <IconButton
+              className="mobile-menu"
+              onClick={() => setOpen((pv) => !pv)}
+            >
+              <i className="fas fa-compass"></i>
+            </IconButton>
+          ) : authenticated ? (
+            <div className="appbar-right" onClick={() => setOpen((pv) => !pv)}>
+              <Avatar />
+              <p>{userData === null ? "Loading..." : userData?.name}</p>
+              <i className="fas fa-angle-down"></i>
+            </div>
+          ) : (
+            <div className="appbar-right">
+              <p className="authme-btn" onClick={() => setOpenAuth(true)}>
+                Login
+              </p>
+              <div className="appr-divider"></div>
+              <p className="join-us-btn" onClick={() => setSsOpen(true)}>
+                Join us.
+              </p>
+            </div>
+          )}
+        </div>
 
         {open && (
           <div className="appbar-menu" ref={ref}>
@@ -125,7 +135,10 @@ const Appbar = () => {
         )}
       </div>
       {openAuth && <Auth setAuthOpen={setOpenAuth} />}
-      {ssOpen && <SellerSelection setOpen={setSsOpen} />}
+      {ssOpen && (
+        <SellerSelection setOpen={setSsOpen} setOpenSellerReg={openSellerReg} />
+      )}
+      {sellerReg && <SellerReg setOpen={openSellerReg} />}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./sellerSelection.scss";
-const SellerSelection = ({ setOpen }) => {
+const SellerSelection = ({ setOpen, setOpenSellerReg }) => {
   const ref = useRef(null);
   useEffect(() => {
     document.addEventListener("keydown", handleEscape, true);
@@ -39,7 +39,7 @@ const SellerSelection = ({ setOpen }) => {
                 Free volunteer support and Hustle free product transportation
               </p>
             </div>
-            <button>Join us!</button>
+            <button onClick={() => setOpenSellerReg(true)}>Join us!</button>
           </div>
 
           <div className="volunteer-select">

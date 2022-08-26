@@ -1,0 +1,152 @@
+.seller-reg-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.seller-reg-box {
+  width: 80%;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: auto;
+}
+.seller-reg-box h1 {
+  padding: 2%;
+  background-color: #eee;
+  border-radius: 8px;
+  text-align: center;
+  font-family: "Cinzel", serif;
+}
+
+.name-box,
+.govt-box {
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.name-box .first-name-box,
+.name-box .last-name-box,
+.name-box .aadhar-box,
+.name-box .pan-box,
+.govt-box .first-name-box,
+.govt-box .last-name-box,
+.govt-box .aadhar-box,
+.govt-box .pan-box {
+  width: 50%;
+}
+.name-box .first-name-box p,
+.name-box .last-name-box p,
+.name-box .aadhar-box p,
+.name-box .pan-box p,
+.govt-box .first-name-box p,
+.govt-box .last-name-box p,
+.govt-box .aadhar-box p,
+.govt-box .pan-box p {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  word-wrap: nowrap;
+}
+.name-box .first-name-box input,
+.name-box .last-name-box input,
+.name-box .aadhar-box input,
+.name-box .pan-box input,
+.govt-box .first-name-box input,
+.govt-box .last-name-box input,
+.govt-box .aadhar-box input,
+.govt-box .pan-box input {
+  width: 50%;
+  padding: 5%;
+  border-radius: 8px;
+  border: 1px solid rgb(208, 208, 208);
+  outline: none;
+  margin: 1% 0;
+  width: 100%;
+}
+
+.bus-box,
+.email-box,
+.special-box {
+  width: 100%;
+  padding: 2%;
+}
+.bus-box p,
+.email-box p,
+.special-box p {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  word-wrap: nowrap;
+  text-transform: capitalize;
+}
+.bus-box input,
+.email-box input,
+.special-box input {
+  width: 50%;
+  padding: 2%;
+  border-radius: 8px;
+  border: 1px solid rgb(208, 208, 208);
+  outline: none;
+  margin: 1% 0;
+  width: 100%;
+}
+
+.all-address-box {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.all-address-box .address-box {
+  padding: 2%;
+  width: 50%;
+}
+.all-address-box .address-box p {
+  font-family: "Roboto", serif;
+  font-weight: 700;
+  word-wrap: nowrap;
+  text-transform: capitalize;
+}
+.all-address-box .address-box input {
+  width: 100%;
+  padding: 5%;
+  border-radius: 8px;
+  border: 1px solid rgb(208, 208, 208);
+  outline: none;
+  margin: 1% 0;
+  width: 100%;
+}
+
+.translator-btn {
+  padding: 1% 2%;
+  margin-bottom: 2%;
+  text-align: right;
+  border: none;
+  outline: none;
+  background-color: #1d976c;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.seller-submit-btn {
+  width: 70%;
+  padding: 2%;
+  background-color: #1d976c;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 auto;
+  margin: 2% auto;
+}/*# sourceMappingURL=sellerreg.css.map */

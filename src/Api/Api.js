@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const Api = axios.create({
-  baseURL: "http://3.108.217.145:8000/api/v1",
+  baseURL: "http://13.232.137.88:4000",
 });
 
 Api.interceptors.request.use((req) => {
@@ -20,9 +20,8 @@ export const call_BookTour = async (id, data) =>
   await Api.post(`/tours/${id}/bookings`, data);
 
 //Users
-export const call_signup = async (data) =>
-  await Api.post("/users/signup", data);
+export const call_signup = async (data) => await Api.post("/user/signup", data);
 
-export const call_signin = async (data) => await Api.post("/users/login", data);
-export const call_signOut = async () => await Api.post("/users/logout");
-export const call_currentUser = async () => await Api.get("/users/me");
+export const call_signin = async (data) => await Api.post("/user/login", data);
+export const call_signOut = async () => await Api.post("/user/logout");
+export const call_currentUser = async () => await Api.get("/user/me");
