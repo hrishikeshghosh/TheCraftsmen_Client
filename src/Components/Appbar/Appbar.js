@@ -57,7 +57,7 @@ const Appbar = () => {
             className="mobile-menu"
             onClick={() => setOpen((pv) => !pv)}
           >
-            <i class="fas fa-compass"></i>
+            <i className="fas fa-compass"></i>
           </IconButton>
         ) : authenticated ? (
           <div className="appbar-right" onClick={() => setOpen((pv) => !pv)}>
@@ -93,7 +93,7 @@ const Appbar = () => {
             </p>
             <p onClick={() => (window.location.href = "/profile/myorders")}>
               <span>
-                <i class="fas fa-shopping-bag"></i>
+                <i className="fas fa-shopping-bag"></i>
               </span>
               My Orders
             </p>

@@ -1,6 +1,7 @@
 import { Avatar, LinearProgress, Rating } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { ReactComponent as SearchLogo } from "../../assets/search.svg";
+import Confirmation from "../../../Components/Confirmation/Confirmation";
 import "./productdisplay.scss";
 const SearchBar = () => {
   return (
@@ -11,11 +12,62 @@ const SearchBar = () => {
   );
 };
 
+const loadScript = (src) => {
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = src;
+
+    script.onload = () => {
+      resolve(true);
+    };
+    script.onerror = () => {
+      resolve(false);
+    };
+    document.body.appendChild(script);
+  });
+};
+
 const ProductDisplay = () => {
   const [openSizeChart, setOpenSizechart] = useState(false);
   const [size, setSize] = useState("S");
   const [quant, setQuant] = useState(1);
   const [price, setPrice] = useState(2200);
+
+  const [openConfirm, setOpenConfirm] = useState(false);
+  const [orderID, setOrderID] = useState("123");
+  const displayRazorPay = async () => {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+
+    if (!res) {
+      alert(
+        "We are having a problem to load your Payment, Are you still online?"
+      );
+      return;
+    }
+
+    var options = {
+      key: "rzp_test_DvgVg00QNj1lSy", // Enter the Key ID generated from the Dashboard
+      amount: "500000",
+      currency: "INR",
+      name: "North India Tour",
+      description: "Complete your payment for the tour",
+      // order_id: "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      handler: function (response) {
+        // alert(response.razorpay_payment_id);
+        // alert(response.razorpay_signature);
+        setOpenConfirm(true);
+        setOrderID(response.razorpay_order_id);
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+    var payment = new window.Razorpay(options);
+    payment.open();
+  };
+
   const ref = useRef(null);
   useEffect(() => {
     document.addEventListener("keydown", handleEscape, true);
@@ -41,6 +93,9 @@ const ProductDisplay = () => {
 
   return (
     <div className="product-display-root">
+      {openConfirm && (
+        <Confirmation setOpen={setOpenConfirm} orderID={orderID} />
+      )}
       <section className="pd-appbar-zone">
         <SearchBar />
       </section>
@@ -56,7 +111,7 @@ const ProductDisplay = () => {
               <p>Hrishikesh</p>
             </div>
             <div className="product-rating-1">
-              <i class="fas fa-star"></i>
+              <i className="fas fa-star"></i>
               <p>4.3(44)</p>
             </div>
           </div>
@@ -113,7 +168,7 @@ const ProductDisplay = () => {
               </div>
               <div className="prr-right">
                 <div className="star-progress sp-5">
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                   <LinearProgress
                     variant="determinate"
                     value={70}
@@ -128,7 +183,7 @@ const ProductDisplay = () => {
                   <p>5</p>
                 </div>
                 <div className="star-progress sp-4">
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                   <LinearProgress
                     variant="determinate"
                     value={70}
@@ -143,7 +198,7 @@ const ProductDisplay = () => {
                   <p>4</p>
                 </div>
                 <div className="star-progress sp-3">
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                   <LinearProgress
                     variant="determinate"
                     value={70}
@@ -158,7 +213,7 @@ const ProductDisplay = () => {
                   <p>3</p>
                 </div>
                 <div className="star-progress sp-2">
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                   <LinearProgress
                     variant="determinate"
                     value={70}
@@ -173,7 +228,7 @@ const ProductDisplay = () => {
                   <p>2</p>
                 </div>
                 <div className="star-progress sp-1">
-                  <i class="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                   <LinearProgress
                     variant="determinate"
                     value={70}
@@ -204,7 +259,7 @@ const ProductDisplay = () => {
                   {size}
                 </p>
                 <i
-                  class="fas fa-angle-down"
+                  className="fas fa-angle-down"
                   onClick={() => {
                     setOpenSizechart((pv) => !pv);
                   }}
@@ -224,7 +279,7 @@ const ProductDisplay = () => {
             </div>
             <div className="size-chart-shower">
               <p>See the size chart</p>
-              <i class="fas fa-expand-alt"></i>
+              <i className="fas fa-expand-alt"></i>
             </div>
             <div className="price-seg-box">
               <p className="price-text">&#8377; {price * quant}</p>
@@ -233,21 +288,24 @@ const ProductDisplay = () => {
                   className="quant-increm"
                   onClick={() => setQuant((pv) => pv + 1)}
                 >
-                  <i class="fas fa-plus"></i>
+                  <i className="fas fa-plus"></i>
                 </button>
                 <p className="quant-text">{quant}</p>
                 <button
                   className="quant-decream"
                   onClick={() => setQuant((pv) => pv - 1)}
                 >
-                  <i class="fas fa-minus"></i>
+                  <i className="fas fa-minus"></i>
                 </button>
               </div>
             </div>
+            <p className="rm-link">Buy me Raw materials</p>
             <button
               className="product-buy-btn"
               onClick={() => {
-                window.location.href = "/product-review";
+                displayRazorPay();
+
+                // window.location.href = "/product-review";
               }}
             >
               Buy now

@@ -23,9 +23,10 @@ const Studio = () => {
   return (
     <div className="studio-root">
       <div className="spotlight-box">
-        <div className="studio-appbar">
+        {/* <div className="studio-appbar">
           <h4>The Craftsmen Explorer</h4>
-        </div>
+        </div> */}
+        <h1>Craftsmen in Spotlight</h1>
         <div className="studio-spotlight">
           <Slider className="items-wrapper-grid" {...settings}>
             {DemoData.spotlighters.map((el) => (
@@ -35,7 +36,11 @@ const Studio = () => {
         </div>
       </div>
       <div className="studio-box">
+        <h1>From the finest artisans</h1>
         <PhotoPost />
+        <VideoPost />
+        <PhotoPost />
+        <VideoPost />
         <Slider className="items-wrapper-grid" {...settings}>
           {DemoVid.spotlightVideos.map((el) => (
             <SpotLightVideos {...el} />
@@ -98,6 +103,25 @@ const PhotoPost = () => {
         className="pp-photo"
         src="https://images.unsplash.com/photo-1620619767323-b95a89183081?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGFuZGljcmFmdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
       />
+      <div className="photo-ender"></div>
+    </div>
+  );
+};
+
+const VideoPost = () => {
+  return (
+    <div className="pp-root">
+      <div className="pp-root-topbar">
+        <Avatar />
+        <p>Hrishikesh Ghosh</p>
+      </div>
+      {/* <img
+        className="pp-photo"
+        src="https://images.unsplash.com/photo-1620619767323-b95a89183081?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aGFuZGljcmFmdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60"
+      /> */}
+      <video style={{ width: "100%", height: "100%" }} controls={true}>
+        <source src="https://player.vimeo.com/external/421846717.sd.mp4?s=1ae28ce542fb63307cc4d21b57c5f9364210686c&profile_id=164&oauth2_token_id=57447761" />
+      </video>
       <div className="photo-ender"></div>
     </div>
   );

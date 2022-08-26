@@ -41,25 +41,7 @@ const SellerSelection = ({ setOpen }) => {
             </div>
             <button>Join us!</button>
           </div>
-          <div className="guide-select">
-            <div className="ssr-headings">
-              <i class="fas fa-plane-departure"></i>
-              <h4>Become a Explorer Guide</h4>
-            </div>
-            <div className="selector-features">
-              <i class="fas fa-check-double"></i>
-              <p>Create and Work with your own team.</p>
-            </div>
-            <div className="selector-features">
-              <i class="fas fa-check-double"></i>
-              <p>Create Your own tour business online!</p>
-            </div>
-            <div className="selector-features">
-              <i class="fas fa-check-double"></i>
-              <p>Make Your own tourism company with us</p>
-            </div>
-            <button>Join us!</button>
-          </div>
+
           <div className="volunteer-select">
             <div className="ssr-headings">
               <i class="fas fa-hands-helping"></i>

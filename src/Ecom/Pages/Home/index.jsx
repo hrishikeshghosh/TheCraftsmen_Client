@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.scss";
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Lottie from "lottie-react";
+import BigLoader from "../../../Helper/Loaders/BigLoader.json";
 
 const data = {
   category: [
@@ -72,6 +73,7 @@ const data = {
 };
 
 const EcomHome = () => {
+  const [showLoader, setShowLoader] = useState(false);
   var settings = {
     dots: false,
     infinite: true,
@@ -83,6 +85,27 @@ const EcomHome = () => {
     autoplay: true,
     autoplaySpeed: 2000,
   };
+
+  useEffect(() => {
+    setShowLoader(true);
+    setTimeout(() => {
+      setShowLoader(false);
+    }, 4000);
+  }, []);
+
+  if (showLoader) {
+    return (
+      <div className="main-loader">
+        <Lottie
+          animationData={BigLoader}
+          loop={true}
+          autoPlay={true}
+          style={{ height: "500px" }}
+        />{" "}
+      </div>
+    );
+  }
+
   return (
     <div className="ecom-home-wrapper">
       <section className="banner">
@@ -124,7 +147,7 @@ const EcomHome = () => {
           ))}
         </Slider>
         <button
-          class="glow-on-hover"
+          className="glow-on-hover"
           onClick={() => {
             window.location.href = "/ecom/collections";
           }}

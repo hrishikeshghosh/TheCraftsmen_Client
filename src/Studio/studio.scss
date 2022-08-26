@@ -14,6 +14,10 @@
   margin: 2% auto;
   border-radius: 8px;
   padding: 3%;
+  h1 {
+    text-align: center;
+    font-family: "Cinzel", serif;
+  }
 }
 
 .sp-root,
@@ -80,4 +84,11 @@
   background-color: white;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+}
+
+.spotlight-box {
+  h1 {
+    font-family: "Cinzel", serif;
+    padding: 2%;
+  }
 }
