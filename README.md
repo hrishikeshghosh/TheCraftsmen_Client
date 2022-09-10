@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Project Introduction
+The Craftsmen is an ecommerce platform which binds all the artisans and craftmakers of every corner of India together and gives them a platform to sell their products online. 
+This was a project through which me and my team "The craftsmen" Represented our college at the Smart India Hackathon 2022. We have chosen this project on the basis of the topic given to us i,e, Heritage and Cultural development of India. 
+We have secured the first prize in the competition with this project.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Technologies Used in Front-end
+1. We have used Reactjs as the leading framework to build this project.
+2. Redux and thunk was used to represent and work on the global state management of project. 
+3. We have used concepts of Debouncing to implement search more efficiently
+4. We have used ImageBB for temporary and immediate image storage.
+5. We have used Libre Translate Api to make the website multilingual.
+6. We have used Material Ui.
+7. We have user Jquery to make DOM usage easier
+8. React Spring was used to build and implement animations
 
-## Available Scripts
+# Technologies used in Back-end
+1. Nodejs and Expressjs was used simultaneously for building backend and Rest Api
+2. cors was used to prevent cross origin conflicts
+3. We have used libraries called xss-clean to sanitize user input coming from post body and restrict any XSS attacks
+4. we have used bcryptjs and to hash sensitive informations like password
+5  Tokenization concepts were used and for that we used jsonwebtokens
+6. We have used MongoDB and Redis as our databases
+7. Elastic Search a very bleeding edge technology was used to implement search mechanism more efficiently and to make it fast.
+8. We have used Nodemailer for sending auto generated/ templated emails
 
-In the project directory, you can run:
 
-### `npm start`
+# Technologies used in AI/ ML
+1. We have used a Bleeding edge technology called Sentence Transformer Model to implement Recommendation feature efficiently
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This Repository does not contain backend codes as we have decided not to reveal it until necessary.
